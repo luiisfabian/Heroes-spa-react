@@ -7,22 +7,37 @@ import { DcPage } from "../heroes/pages/DcPage";
 import { LoginPage } from "../auth/pages/LoginPage";
 import { HeroesApp } from "../HeroesApp";
 
-
-export const AppRouter = createBrowserRouter([
+import { Navbar } from "../ui";
+export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MarvelPage />,
-    },
-    {
-        path: "marvel",
-        element: <MarvelPage />,
-    },
-    {
-        path: "dc",
-        element: <DcPage />,
-    },
-    {
-        path: "login",
-        element: <LoginPage />,
-    },
+        element: <Navbar />,
+        children:[
+            {
+                path: "/",
+                element: <MarvelPage />,
+            },
+            {
+                path: "/marvel",
+                element: <MarvelPage />,
+            },
+            {
+                path: "/dc",
+                element: <DcPage />,
+            },
+            {
+                path: "/login",
+                element: <LoginPage />,
+            },
+        ] 
+    }
+    
 ]);
+
+import React from 'react'
+
+export const AppRouter = () => {
+    return (
+        <RouterProvider router={router} />)
+}
+

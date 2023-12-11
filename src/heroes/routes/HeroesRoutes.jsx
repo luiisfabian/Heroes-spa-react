@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar } from '../../ui'
 import { LoginPage } from '../../auth';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
-import { DcPage, MarvelPage } from '../pages';
+import { DcPage, HeroPage, MarvelPage, SearchPage } from '../pages';
 
 export const childrenHeroRoutes = [
 
@@ -17,6 +17,14 @@ export const childrenHeroRoutes = [
     {
         path: "/dc",
         element: <DcPage />,
+    },
+    {
+        path: "/search",
+        element: <SearchPage />,
+    },
+    {
+        path: "/hero",
+        element: <HeroPage />,
     },
     {
         path: "/*",

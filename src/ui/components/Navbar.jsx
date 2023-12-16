@@ -38,20 +38,20 @@ export const Navbar = () => {
                     >
                         DC
                     </NavLink>
-                    {/* 
-                    <NavLink
+                    
+                    {/* <NavLink
                         className="nav-item nav-link"
                         to="/hero"
                     >
                         Hero
-                    </NavLink>
+                    </NavLink> */}
 
                     <NavLink
                         className="nav-item nav-link"
                         to="/search"
                     >
                         Search
-                    </NavLink> */}
+                    </NavLink>
                 </div>
             </div>
 

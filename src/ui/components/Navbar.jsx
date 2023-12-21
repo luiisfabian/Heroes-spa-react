@@ -5,11 +5,12 @@ import { authContext } from '../../auth';
 
 export const Navbar = () => {
 
-const {user} = useContext(authContext);
+const {user, logOut} = useContext(authContext);
  
     const navigate = useNavigate()
 
     const onLogout = () => {
+        logOut();
         navigate('/login',{
             // todo el replace ayuda a retroder y eliminar el historial
             replace: true

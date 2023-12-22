@@ -4,18 +4,28 @@ import {
 } from "react-router-dom";
 import { LoginPage } from "../auth/index";
 import { childrenHeroRoutes, HeroesRoutes } from "../heroes/routes/HeroesRoutes";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const router = createBrowserRouter([
     {
 
         path: "/login",
-        element: <LoginPage />,
+        element: (<PublicRoute>
+            <LoginPage />,
+
+        </PublicRoute>),
+
 
     },
     {
 
         path: "/",
-        element: <HeroesRoutes />,
+        element: (
+            <PrivateRoute >
+                <HeroesRoutes />
+            </PrivateRoute >
+        ),
         children: childrenHeroRoutes
 
     }

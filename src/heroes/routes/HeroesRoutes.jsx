@@ -8,7 +8,7 @@ export const childrenHeroRoutes = [
 
     {
         path: "/*",
-        element: <MarvelPage />,
+        element: <Navigate to={"/marvel"}/>,
     },
     {
         path: "/marvel",
@@ -26,11 +26,11 @@ export const childrenHeroRoutes = [
         path: "/hero/:heroId",
         element: <HeroPage />,
     },
-    {
-        path: "/*",
-        element: <Navigate to={"/marvel"}/>
+    // {
+    //     path: "/*",
+    //     element: <Navigate to={"/marvel"}/>
       
-    }
+    // }
     // {
     //     path: "/search",
     //     element: <DcPage />,

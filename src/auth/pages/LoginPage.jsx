@@ -13,10 +13,10 @@ export const LoginPage = () => {
 
   const onLogin = () => {
 
+    const lastPash = localStorage.getItem('lastPath') || '/'
+    login('Fabian Muñoz');
 
-    login('James');
-
-    navigate('/*', {
+    navigate(lastPash, {
       replace: true
     })
   }

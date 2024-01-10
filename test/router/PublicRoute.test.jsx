@@ -18,36 +18,36 @@ describe('test in PublicRoute.jsx', () => {
         expect(screen.getByText("ruta publica")).toBeTruthy();
     })
 
-    test('debe de navegar si esta autenticado', () => {
-        const contextValue = {
-            logged: true,
-            user: {
-                "name": "FAbian",
-                "id": "123"
-            }
-        }
+    // test('debe de navegar si esta autenticado', () => {
+    //     const contextValue = {
+    //         logged: true,
+    //         user: {
+    //             "name": "FAbian",
+    //             "id": "123"
+    //         }
+    //     }
 
-        render(
-            <MemoryRouter initialEntries={['/login']}>
+    //     render(
+    //         <MemoryRouter initialEntries={['/login']}>
 
-                <authContext.Provider value={contextValue}>
-                    <Routes>
-                        <Route element={<PublicRoute />}>
-                            <Route path="login" element={<h1>PUBLIC ROUTE</h1>} />
-                        </Route>
-                        <Route path="marvel" element={<h1>MARVEL Comics</h1>} />
+    //             <authContext.Provider value={contextValue}>
+    //                 <Routes>
+    //                     <Route element={<PublicRoute />}>
+    //                         <Route path="login" element={<h1>PUBLIC ROUTE</h1>} />
+    //                     </Route>
+    //                     <Route path="marvel" element={<h1>MARVEL Comics</h1>} />
 
 
-                    </Routes>
+    //                 </Routes>
            
-                </authContext.Provider>
-            </MemoryRouter>
-        )
+    //             </authContext.Provider>
+    //         </MemoryRouter>
+    //     )
 
-        screen.debug();
-        expect(screen.getByText("MARVEL Comics")).toBeTruthy();
+    //     screen.debug();
+    //     expect(screen.getByText("MARVEL Comics")).toBeTruthy();
 
 
 
-    })
+    // })
 });

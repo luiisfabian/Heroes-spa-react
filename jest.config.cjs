@@ -3,6 +3,7 @@ module.exports = {
     // yarn add -D jest-environment-jsdom
 
     testEnvironment: 'jest-environment-jsdom', 
-    setupFiles:['./jest.setup.js']  
+    setupFiles:['./jest.setup.js'] ,
+    transformIgnorePatterns: ["/node_modules/(?!query-string)/"],
 
 }

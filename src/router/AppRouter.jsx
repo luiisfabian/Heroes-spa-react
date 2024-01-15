@@ -7,19 +7,18 @@ import { childrenHeroRoutes, HeroesRoutes } from "../heroes/routes/HeroesRoutes"
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 
-export const router = createBrowserRouter([
+export const routes = [
     {
-
+ 
         path: "/login",
-        element: (<PublicRoute>
+        element: ( <PublicRoute>
             <LoginPage />,
-
-        </PublicRoute>),
-
-
+ 
+        </PublicRoute> ),
+ 
     },
     {
-
+ 
         path: "/",
         element: (
             <PrivateRoute >
@@ -27,15 +26,15 @@ export const router = createBrowserRouter([
             </PrivateRoute >
         ),
         children: childrenHeroRoutes
-
+ 
     }
-
-]);
-
-
-
+];
+ 
+export const router = createBrowserRouter( routes );
+ 
+ 
 export const AppRouter = () => {
     return (
-        <RouterProvider router={router} />)
+        <RouterProvider router={ router } />
+    );
 }
-

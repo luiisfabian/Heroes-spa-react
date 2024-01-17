@@ -10,7 +10,7 @@ describe('pruebas en Navbar.jsx', () => {
             name: 'John',
             logged: true
         },
-        logout: jest.fn()
+        logOut: jest.fn()
 
     }
 
@@ -41,11 +41,11 @@ describe('pruebas en Navbar.jsx', () => {
         </authContext.Provider>)
 
         const logOuth = screen.getByRole('button');
-            fireEvent.click(logOuth);
+            fireEvent.click(logOuth );
 
-        // expect(contextValue.logout).toHaveBeenCalled();
-        // expect(contextValue.logout).toHaveBeenCalledTimes(1);
-        // expect(navigateMock).toHaveBeenCalledWith('/login', {"replace": true});
+        expect(contextValue.logOut ).toHaveBeenCalled();
+        expect(contextValue.logOut ).toHaveBeenCalledTimes(1);
+        // expect(mockedUseNavigate).toHaveBeenCalledWith('/login', { replace: true })
 
     })
 });

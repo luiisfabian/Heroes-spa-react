@@ -11,6 +11,9 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('test in SearchPage', () => {
+
+    beforeEach(() => jest.clearAllMocks() );
+
     test('debe mostrarse correctamente con los valores por defecto', () => {
         // beforeEach(() => jest.clearAllMocks())
 
@@ -61,8 +64,10 @@ describe('test in SearchPage', () => {
         // screen.debug()
         const input = screen.getByRole('textbox')
 
-        fireEvent.change(input, { name: 'searchText', value: inputValue })
-        const form = screen.getByRole('form')
+        fireEvent.change( input, { target: { name: 'searchText', value: inputValue }})
+
+
+        const form = screen.getByRole('form');
         fireEvent.submit(form)
         expect( mockedUseNavigate ).toHaveBeenCalledWith(`?q=${ inputValue }`)
     
